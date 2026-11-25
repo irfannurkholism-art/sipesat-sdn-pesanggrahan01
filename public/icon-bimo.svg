@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="headGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <!-- Antenna ears -->
+  <path d="M168 158 L138 98 C132 86 146 76 156 84 L204 128 Z" fill="#DBEAFE"/>
+  <path d="M344 158 L374 98 C380 86 366 76 356 84 L308 128 Z" fill="#DBEAFE"/>
+  <!-- Side ear lights -->
+  <circle cx="114" cy="248" r="24" fill="#EFF6FF"/>
+  <circle cx="114" cy="248" r="12" fill="#FDE047"/>
+  <circle cx="398" cy="248" r="24" fill="#EFF6FF"/>
+  <circle cx="398" cy="248" r="12" fill="#FDE047"/>
+  <!-- Head shell -->
+  <rect x="118" y="128" width="276" height="224" rx="92" fill="#FFFFFF"/>
+  <rect x="128" y="138" width="256" height="204" rx="84" fill="url(#headGrad)"/>
+  <!-- Visor -->
+  <rect x="158" y="176" width="196" height="128" rx="50" fill="url(#visorGrad)"/>
+  <!-- Glowing eyes -->
+  <circle cx="218" cy="232" r="22" fill="url(#eyeGrad)"/>
+  <circle cx="294" cy="232" r="22" fill="url(#eyeGrad)"/>
+  <!-- Cheeks -->
+  <ellipse cx="188" cy="264" rx="14" ry="8" fill="#FB7185" opacity="0.85"/>
+  <ellipse cx="324" cy="264" rx="14" ry="8" fill="#FB7185" opacity="0.85"/>
+  <!-- Smile -->
+  <path d="M236 260 Q256 280 276 260" fill="none" stroke="#BAE6FD" stroke-width="10" stroke-linecap="round"/>
+  <!-- Body -->
+  <rect x="182" y="362" width="148" height="84" rx="42" fill="#FFFFFF"/>
+  <rect x="192" y="370" width="128" height="68" rx="34" fill="url(#headGrad)"/>
+  <!-- Chest emblem (mini book/star) -->
+  <rect x="224" y="384" width="64" height="40" rx="14" fill="#FEF3C7"/>
+  <path d="M256 393 L260 401 L269 402 L262 408 L264 416 L256 412 L248 416 L250 408 L243 402 L252 401 Z" fill="#0066FF"/>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "SiapSumatif — Belajar Bareng Bimo",
+  "description": "Aplikasi web PWA mobile-first untuk persiapan asesmen sumatif siswa lengkap dengan jadwal, kisi-kisi, ringkasan materi, latihan soal interaktif, progres belajar, dan tutor AI Bimo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
