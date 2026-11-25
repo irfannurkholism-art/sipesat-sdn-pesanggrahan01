@@ -1,4 +1,4 @@
-const CACHE_NAME = 'siapsumatif-v1';
+const CACHE_NAME = 'sipesat-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -33,10 +33,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Never cache non-GET requests or Gemini / backend API endpoints (network-only)
+  // Never cache non-GET requests or Gemini / backend / Netlify Function endpoints (network-only)
   if (
     request.method !== 'GET' ||
     url.pathname.startsWith('/api/') ||
+    url.pathname.startsWith('/.netlify/functions/') ||
     url.hostname.includes('generativelanguage.googleapis.com')
   ) {
     return;

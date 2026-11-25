@@ -109,36 +109,56 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
     setIsLoading(true);
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: trimmed,
-          history: historySnapshot,
-          studentName: settings.studentName,
-          studentClass: settings.studentClass,
-          focusSubjectId: focusSubjectId !== 'all' ? focusSubjectId : undefined,
-        }),
+      const payload = JSON.stringify({
+        message: trimmed,
+        history: historySnapshot,
+        studentName: settings.studentName,
+        studentClass: settings.studentClass,
+        focusSubjectId: focusSubjectId !== 'all' ? focusSubjectId : undefined,
       });
 
-      const data = (await response.json().catch(() => ({}))) as {
+      const endpoints = ['/api/chat', '/.netlify/functions/chat'];
+      let response: Response | null = null;
+      let data: {
         reply?: string;
         relatedSubjectId?: string;
         error?: string;
-      };
+      } = {};
+
+      for (const endpoint of endpoints) {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+        });
+
+        const contentType = res.headers.get('content-type') || '';
+        const isJson = contentType.includes('application/json');
+
+        if ((res.status === 404 || !isJson) && endpoint !== endpoints[endpoints.length - 1]) {
+          continue;
+        }
+
+        response = res;
+        data = isJson ? await res.json().catch(() => ({})) : {};
+        break;
+      }
 
       const replyTime = new Date().toLocaleTimeString('id-ID', {
         hour: '2-digit',
         minute: '2-digit',
       });
 
-      if (!response.ok || !data.reply) {
+      if (!response || !response.ok || !data.reply) {
+        const isEndpointMissing = response?.status === 404;
         onAppendMessage({
           id: `p-err-${Date.now()}`,
           role: 'pipo',
           text:
             data.error ||
-            'Maaf, Pipo belum berhasil terhubung ke server AI saat ini. Coba kirim ulang sebentar lagi ya.',
+            (isEndpointMissing
+              ? 'Layanan server Tanya Pipo (Netlify Functions) belum aktif di situs ini. Pastikan folder netlify/functions ikut ter-deploy bersama netlify.toml.'
+              : 'Maaf, Pipo belum berhasil terhubung ke server AI saat ini. Coba kirim ulang sebentar lagi ya.'),
           timestamp: replyTime,
           isError: true,
         });
