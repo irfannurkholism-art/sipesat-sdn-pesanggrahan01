@@ -1,4 +1,4 @@
-import { QuizQuestion } from './types';
+import type { QuizQuestion } from './types.ts';
 
 /**
  * KKA Kelas 5 — 35 Soal Baru (TP 1: 11, TP 2: 12, TP 3: 12)

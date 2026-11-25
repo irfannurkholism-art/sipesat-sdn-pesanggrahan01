@@ -2,7 +2,7 @@ import { GoogleGenAI, ThinkingLevel } from '@google/genai';
 import {
   buildPipoKnowledgeContext,
   SUBJECTS,
-} from '../data/assessmentData';
+} from '../data/assessmentData.ts';
 
 const MODEL_NAME = 'gemini-4-hydrogen';
 

@@ -1,4 +1,4 @@
-import { QuizQuestion } from './types';
+import type { QuizQuestion } from './types.ts';
 
 /**
  * IPAS Kelas 5 — 35 Soal Latihan Baru (TP 1: 10, TP 2: 11, TP 3: 10, TP 4: 4)

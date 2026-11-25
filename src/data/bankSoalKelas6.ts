@@ -1,4 +1,4 @@
-import { QuizQuestion } from './types';
+import type { QuizQuestion } from './types.ts';
 
 /**
  * Bahasa Inggris Kelas 6 — 35 Soal Baru (TP 1: 12, TP 2: 12, TP 3: 11)

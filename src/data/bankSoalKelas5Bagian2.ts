@@ -1,4 +1,4 @@
-import { QuizQuestion } from './types';
+import type { QuizQuestion } from './types.ts';
 
 /**
  * Matematika Kelas 5 — 25 Soal Baru (TP 1: 6, TP 2: 6, TP 3: 7, TP 4: 6)

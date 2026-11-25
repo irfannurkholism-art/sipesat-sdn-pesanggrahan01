@@ -19,7 +19,7 @@ export type {
   SubjectClassContent,
   SubjectData,
   ScheduleItem,
-} from './types';
+} from './types.ts';
 
 import type {
   TargetClass,
@@ -27,30 +27,30 @@ import type {
   SubjectData,
   ScheduleItem,
   QuizQuestion,
-} from './types';
+} from './types.ts';
 
 import {
   PANCASILA_KELAS5_SOAL,
   BINDO_KELAS5_SOAL,
   SENI_RUPA_KELAS5_SOAL,
-} from './bankSoalKelas5Bagian1';
+} from './bankSoalKelas5Bagian1.ts';
 import {
   MATEMATIKA_KELAS5_SOAL,
   PLH_KELAS5_SOAL,
   BINGGRIS_KELAS5_SOAL,
-} from './bankSoalKelas5Bagian2';
+} from './bankSoalKelas5Bagian2.ts';
 import {
   KKA_KELAS5_SOAL,
   BJAWA_KELAS5_SOAL,
-} from './bankSoalKelas5Bagian3';
+} from './bankSoalKelas5Bagian3.ts';
 import {
   BINGGRIS_KELAS6_SOAL,
   KKA_KELAS6_SOAL,
-} from './bankSoalKelas6';
+} from './bankSoalKelas6.ts';
 import {
   IPAS_KELAS5_SOAL,
   PAI_KELAS5_SOAL,
-} from './bankSoalIpasPaiKelas5';
+} from './bankSoalIpasPaiKelas5.ts';
 
 export const TARGET_CLASSES: TargetClass[] = ['Kelas 5', 'Kelas 6'];
 
